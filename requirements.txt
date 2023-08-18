@@ -1,0 +1,5 @@
+beautifulsoup4==4.12.2
+Django==3.2
+psycopg2==2.9.7
+requests==2.31.0
+drf-yasg==1.21.7

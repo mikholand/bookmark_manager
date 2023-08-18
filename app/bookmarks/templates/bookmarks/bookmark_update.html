@@ -1,0 +1,21 @@
+{% extends 'bookmarks/base.html' %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+
+<form action="{% url 'update_bookmark' object.pk %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-error">{{ form.non_field_errors }}</div>
+
+    {% for f in form %}
+    <p><label class="form-label" for="{{ f.id_for_label }}">{{ f.label }}: </label>{{ f }}</p>
+    <div class="form-error">{{ f.errors }}</div>
+    {% endfor %}
+
+    <button type="submit" class="btn btn-success">Сохранить изменения</button>
+    <a class="btn btn-danger" href="{% url 'delete_bookmark' object.pk %}">Удалить закладку</a>
+    <a class="btn btn-secondary" href="{% url 'home' %}">Отмена</a>
+</form>
+
+{% endblock %}

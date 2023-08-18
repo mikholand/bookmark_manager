@@ -1,0 +1,20 @@
+{% extends 'bookmarks/base.html' %}
+
+{% block content %}
+  <h1>{{ title }}</h1>
+  <a class="btn btn-primary" href="{% url 'add_collection' %}">Добавить новую коллекцию</a>
+  
+  <ul>
+    {% for collection in collections %}
+      <li class="collection-item">
+        <div class="collection-card">
+          <h4><a href="{% url 'collection_bookmarks' collection.pk %}">{{ collection.title }}</a></h4>
+          Описание: {{ collection.description }}<br><br>
+          <a class="btn btn-info" href="{% url 'update_collection' collection.pk %}">Редактировать</a>
+          <a class="btn btn-danger" href="{% url 'delete_collection' collection.pk %}">Удалить</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

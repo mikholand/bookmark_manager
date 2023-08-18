@@ -1,0 +1,37 @@
+{% extends 'bookmarks/base.html' %}
+
+{% block content %}
+  <h1>Ваши закладки</h1>
+  <form action="{% url 'add_bookmark' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Добавить новую закладку</button>
+  </form>
+  
+  <ul>
+    {% for bookmark in bookmarks %}
+      <li class="bookmark-item">
+        <div class="bookmark-card">
+
+          <div class="bookmark-details">
+            <h5>{{ bookmark.title }}</h5><br>
+            <b>Описание</b>: {{ bookmark.description }}<br>
+            <b>Ссылка</b>: <a href="{{ bookmark.url }}">{{ bookmark.url }}</a><br>
+            <b>Тип</b>: {{ bookmark.bookmark_type }}<br>
+            <b>Коллекция</b>: 
+            {% for collection in bookmark.collections.all %}
+              <a href="{% url 'collection_bookmarks' collection.pk %}">{{ collection.title }}</a>
+            {% endfor %}
+            <br>
+            <a class="btn btn-info" href="{% url 'update_bookmark' bookmark.pk %}">Редактировать</a>
+            <a class="btn btn-danger" href="{% url 'delete_bookmark' bookmark.pk %}">Удалить</a>
+          </div>
+          {% if bookmark.preview_image %}
+            <img src="{{ bookmark.preview_image }}" alt="Превью">
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    margin: 20px;
+}
+
+.content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.form-label {
+    display: inline-block;
+    min-width: 160px;
+    vertical-align: top;
+}
+
+.form-error ul {
+    list-style: none;
+    padding: 0;
+    color: #CC0000;
+}
+
+.form-button {
+    min-width: 200px;
+    font-size: 16px;
+}
+
+.bookmark-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bookmark-card {
+    width: 100%;
+    border: 2px solid #b40808;
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.bookmark-card img {
+    max-width: 250px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    height: auto;
+}
+
+.bookmark-card .bookmark-details {
+    flex-grow: 1;
+}
+
+.preview-image {
+    max-width: 250px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    
+}
+
+.bookmark-details {
+    font-size: 14px;
+}
+
+.bookmark-details a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.bookmark-details .btn {
+    color: #ffffff;
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.bookmark-details a:hover {
+    text-decoration: underline;
+}
+
+.collection-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.collection-card {
+    flex-grow: 1;
+    width: 100%;
+    border: 2px solid #b40808;
+    border-radius: 20px;
+    padding: 25px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
